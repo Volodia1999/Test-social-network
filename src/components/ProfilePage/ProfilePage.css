@@ -1,0 +1,8 @@
+.post {
+    resize: none;
+    border: 2px dashed #000;
+}
+
+.avatar {
+    cursor: pointer;
+}

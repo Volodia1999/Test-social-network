@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8bc12995-15cc-4ae2-bc3a-5bdd5796f031" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>logo</find>
+    </findStrings>
+  </component>
+  <component name="ProjectId" id="1PTeAwbrptAlPZraQkWh3L55QqI" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Робочий стіл/AngularPractice" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Робочий стіл\login\src" />
+      <recent name="F:\Робочий стіл\login\src\components\Header" />
+      <recent name="C:\Users\Ivan\Desktop\email\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Робочий стіл\login\src\redux" />
+      <recent name="F:\Робочий стіл\login\src\components\Settings" />
+      <recent name="F:\Робочий стіл\login\src\assets\audio" />
+      <recent name="F:\Робочий стіл\login\src\common" />
+      <recent name="C:\Users\Ivan\Desktop\login\src\components" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bc12995-15cc-4ae2-bc3a-5bdd5796f031" name="Default Changelist" comment="" />
+      <created>1565010650168</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565010650168</updated>
+      <workItem from="1565010653361" duration="18080000" />
+      <workItem from="1565032457307" duration="6291000" />
+      <workItem from="1565080628855" duration="5661000" />
+      <workItem from="1565092197467" duration="19236000" />
+      <workItem from="1565117914996" duration="161000" />
+      <workItem from="1565120864352" duration="562000" />
+      <workItem from="1565121692444" duration="6598000" />
+      <workItem from="1565161245343" duration="1359000" />
+      <workItem from="1565802998923" duration="14770000" />
+      <workItem from="1565859412542" duration="3416000" />
+      <workItem from="1565876477310" duration="4972000" />
+      <workItem from="1565902397892" duration="745000" />
+      <workItem from="1565904589733" duration="1868000" />
+      <workItem from="1565909547119" duration="903000" />
+      <workItem from="1568915040996" duration="90000" />
+      <workItem from="1572682819338" duration="19116000" />
+      <workItem from="1572780412346" duration="10391000" />
+      <workItem from="1572870202517" duration="19577000" />
+      <workItem from="1572908745163" duration="21325000" />
+      <workItem from="1572987949412" duration="16708000" />
+      <workItem from="1573211931265" duration="14549000" />
+      <workItem from="1573406211645" duration="5687000" />
+      <workItem from="1573486953666" duration="11456000" />
+      <workItem from="1573553791600" duration="16740000" />
+      <workItem from="1573638043365" duration="1523000" />
+      <workItem from="1573719743831" duration="1091000" />
+      <workItem from="1573740311171" duration="156000" />
+      <workItem from="1574244742868" duration="5897000" />
+      <workItem from="1574511119184" duration="11223000" />
+      <workItem from="1574758192550" duration="20032000" />
+      <workItem from="1574850064021" duration="23427000" />
+      <workItem from="1574890130152" duration="13000" />
+      <workItem from="1574946869536" duration="16041000" />
+      <workItem from="1574965163249" duration="622000" />
+      <workItem from="1574979968513" duration="17776000" />
+      <workItem from="1575390076583" duration="14562000" />
+      <workItem from="1575464181334" duration="51000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

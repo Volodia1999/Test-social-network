@@ -1,0 +1,14 @@
+.error textarea {
+    border: 2px dashed red;
+}
+
+.error input {
+    border: 2px solid red;
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: unset;
+    outline: none;
+    box-shadow: 0 0 0;
+}

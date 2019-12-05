@@ -1,0 +1,13 @@
+.info-card {
+    height: fit-content;
+    border: 1px solid blue;
+    border-radius: 20px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.word-wrap {
+    word-break: break-all;
+}

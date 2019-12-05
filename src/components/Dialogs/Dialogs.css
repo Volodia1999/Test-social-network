@@ -1,0 +1,10 @@
+.active_name {
+    color: gold;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.color_name_author {
+    color: #000;
+    line-height: 2.5;
+}
