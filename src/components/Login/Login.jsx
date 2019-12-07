@@ -38,11 +38,16 @@ const LoginForm = ({handleSubmit, error, isPendingLogin}) => {
                 <Field className='mr-2 mt-2' type={'checkbox'} name='rememberMe' component='input'/>
                 <h6 className='mt-1'>Remind me</h6>
             </div>
-            <Row className='mt-3'>
+            <Row className='mt-2'>
                 <Button className='m-auto col-md-6 col-12' color='info'>
                     {isPendingLogin ? <Spinner color='white' size='sm' /> : 'Log In'}
                 </Button>
             </Row>
+            <a
+                href='https://social-network.samuraijs.com/'
+                rel='noopener noreferrer' target='_blank'>
+                <i>Register now!</i>
+            </a>
         </form>
     )
 };
