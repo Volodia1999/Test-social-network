@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8bc12995-15cc-4ae2-bc3a-5bdd5796f031" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/UsersContainer/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/UsersContainer/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Users/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Users/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,17 +46,17 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Робочий стіл\login\src" />
+      <recent name="F:\Робочий стіл\login\src\components\Header" />
+      <recent name="C:\Users\Ivan\Desktop\email\src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Робочий стіл\login\src\components\Users" />
       <recent name="F:\Робочий стіл\login\src\redux" />
       <recent name="F:\Робочий стіл\login\src\components\Settings" />
       <recent name="F:\Робочий стіл\login\src\assets\audio" />
       <recent name="F:\Робочий стіл\login\src\common" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Робочий стіл\login\src" />
-      <recent name="F:\Робочий стіл\login\src\components\Header" />
-      <recent name="C:\Users\Ivan\Desktop\email\src" />
     </key>
   </component>
   <component name="ServiceViewManager">
