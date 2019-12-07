@@ -4,6 +4,7 @@ import {Spinner} from "reactstrap";
 import {Field, reduxForm} from "redux-form";
 import {maxLength, required} from "../../utils/validate";
 import {Textarea} from "../../common/FormControl";
+import MyPost from "../MyPost/MyPost";
 
 export const ProfilePageWithHooks = (props) => {
     const [editMode, editActiveMode] = useState(false);
@@ -47,7 +48,8 @@ export const ProfilePageWithHooks = (props) => {
             />
             <div className='d-flex mt-2'>
                 <div>
-                    <label><input accept='image/jpeg, image/png' type='file' autoComplete='off' style={{display: 'none'}}/>
+                    <label><input accept='image/jpeg, image/png' type='file' autoComplete='off'
+                                  style={{display: 'none'}}/>
                         <img
                             src={profile.photos.large || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI-ulE8Ev4HVagvCD_iN9urExqcxsM5rzgG7sZ--g1_7FWCNz2&s'}
                             alt='avatar'
@@ -69,18 +71,7 @@ export const ProfilePageWithHooks = (props) => {
             </div>
             <p className='ml-3 font-weight-bolder'>My posts</p>
             <ProfileReduxForm onSubmit={addProfilePost}/>
-            {posts.map((post) => (
-                <div className='mt-2' key={post.id}>
-                    <img
-                        src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_AtFfucscEuUUlO8QJLqDko3nhoUhZ7VkjwVLalD0Ck_A54hX&s'
-                        alt='avatar'
-                        width={32}
-                        height={32}
-                        className='rounded-circle mr-1'/>
-                    <span>{post.message}</span>
-                    <p className='ml-1'><i className='fa fa-thumbs-up'/>{post.count_like}</p>
-                </div>
-            ))}
+            {posts.map((post) => <MyPost post={post} key={post.id}/>)}
         </div>
     )
 };

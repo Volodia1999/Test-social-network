@@ -34,9 +34,9 @@ export const Dialogs = (props) => {
     )
 };
 
-const DialogForm = (props) => {
+const DialogForm = ({handleSubmit}) => {
     return (
-        <form onSubmit={props.handleSubmit} className='d-flex justify-content-center flex-wrap mt-4 mb-1'>
+        <form onSubmit={handleSubmit} className='d-flex justify-content-center flex-wrap mt-4 mb-1'>
                 <Field
                     component='textarea'
                     name='newBodyMessage'

@@ -32,44 +32,38 @@ export const getStatus = (status) => (
 );
 
 export const getProfileUsers = (userId) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(profileSuccess(true));
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`, {
+        const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`, {
             withCredentials: true,
-        })
-            .then(response => {
-                dispatch(setProfileUsers(response.data));
-                dispatch(profileSuccess(false));
-            });
+        });
+        dispatch(setProfileUsers(response.data));
+        dispatch(profileSuccess(false));
     }
 };
 
 export const getUserStatus = (userId) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(profileSuccess(true));
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/status/${userId}`, {
+        const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/profile/status/${userId}`, {
             withCredentials: true,
-        })
-            .then(response => {
-                dispatch(getStatus(response.data));
-                dispatch(profileSuccess(false));
-            });
+        });
+        dispatch(getStatus(response.data));
+        dispatch(profileSuccess(false));
     }
 };
 
 export const updateUserStatus = (status) => {
-    return (dispatch) => {
-        axios.put(`https://social-network.samuraijs.com/api/1.0/profile/status`, {status: status}, {
+    return async (dispatch) => {
+        const response = await axios.put(`https://social-network.samuraijs.com/api/1.0/profile/status`, {status: status}, {
             withCredentials: true,
             headers: {
                 "API-KEY": "ebd1ca42-14fd-4d10-bafa-1eaa608ba0f3",
             }
-        })
-            .then(response => {
-                if (response.data.resultCode === 0) {
-                    dispatch(getStatus(status));
-                }
-            });
+        });
+        if (response.data.resultCode === 0) {
+            dispatch(getStatus(status));
+        }
     }
 };
 

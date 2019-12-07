@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bc12995-15cc-4ae2-bc3a-5bdd5796f031" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="8bc12995-15cc-4ae2-bc3a-5bdd5796f031" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MyPost/MyPost.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Paginator/Paginator.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Users/User.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePageWithHooks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePageWithHooks.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/Auth/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Auth/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/ProfilePage/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ProfilePage/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/Users/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Users/actions.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,10 +33,19 @@
       <find>logo</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1PTeAwbrptAlPZraQkWh3L55QqI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Робочий стіл/AngularPractice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Users" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -35,28 +56,28 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Робочий стіл\login\src\components\Users" />
+      <recent name="F:\Робочий стіл\login\src\redux" />
+      <recent name="F:\Робочий стіл\login\src\components\Settings" />
+      <recent name="F:\Робочий стіл\login\src\assets\audio" />
+      <recent name="F:\Робочий стіл\login\src\common" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Робочий стіл\login\src" />
       <recent name="F:\Робочий стіл\login\src\components\Header" />
       <recent name="C:\Users\Ivan\Desktop\email\src" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Робочий стіл\login\src\redux" />
-      <recent name="F:\Робочий стіл\login\src\components\Settings" />
-      <recent name="F:\Робочий стіл\login\src\assets\audio" />
-      <recent name="F:\Робочий стіл\login\src\common" />
-      <recent name="C:\Users\Ivan\Desktop\login\src\components" />
-    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -107,10 +128,17 @@
       <workItem from="1574979968513" duration="17776000" />
       <workItem from="1575390076583" duration="14562000" />
       <workItem from="1575464181334" duration="51000" />
+      <workItem from="1575713186014" duration="6408000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Inspections" timestamp="1575715294244">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1575715294244" />
   </component>
 </project>

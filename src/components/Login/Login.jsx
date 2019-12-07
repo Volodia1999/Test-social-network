@@ -10,9 +10,9 @@ import {Redirect} from "react-router-dom";
 const maxLength20 = maxLength(20);
 const minLength5 = minLength(5);
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error, isPendingLogin}) => {
     return (
-        <form className='m-auto w-50' onSubmit={props.handleSubmit}>
+        <form className='m-auto w-50' onSubmit={handleSubmit}>
             <Row className='mt-2'>
                 <Field className='m-auto col-md-6 col-12'
                        name={'email'}
@@ -29,9 +29,9 @@ const LoginForm = (props) => {
                        validate={[required, maxLength20, minLength5]}
                        component={LoginInput}/>
             </Row>
-            {props.error &&
+            {error &&
             <div>
-                <h6 className='mt-1 text-danger'>{props.error}</h6>
+                <h6 className='mt-1 text-danger'>{error}</h6>
             </div>
             }
             <div className='mt-3 d-flex justify-content-center'>
@@ -40,7 +40,7 @@ const LoginForm = (props) => {
             </div>
             <Row className='mt-3'>
                 <Button className='m-auto col-md-6 col-12' color='info'>
-                    {props.isPendingLogin ? <Spinner color='white' size='sm' /> : 'Log In'}
+                    {isPendingLogin ? <Spinner color='white' size='sm' /> : 'Log In'}
                 </Button>
             </Row>
         </form>
@@ -51,19 +51,19 @@ const LoginReduxForm = reduxForm({
     form: 'login'
 })(LoginForm);
 
-const Login = (props) => {
+const Login = ({login, isAuth, isPendingLogin}) => {
     const onSubmit = (values) => {
-        props.login(values.email, values.password, values.rememberMe, true);
+        login(values.email, values.password, values.rememberMe, true);
     };
 
-    if (props.isAuth) {
+    if (isAuth) {
         return <Redirect to='/profile'/>
     }
     return (
         <Container>
             <Row className='text-center'>
                 <h3 className='col-12'><b>Login</b></h3>
-                <LoginReduxForm isPendingLogin={props.isPendingLogin} onSubmit={onSubmit}/>
+                <LoginReduxForm isPendingLogin={isPendingLogin} onSubmit={onSubmit}/>
             </Row>
         </Container>
     )
