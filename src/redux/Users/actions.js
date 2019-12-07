@@ -112,6 +112,5 @@ export const unfollow = (userId) => {
             dispatch(unfollowSuccess(userId));
         }
         dispatch(setFollowing(false, userId));
-
     }
 };

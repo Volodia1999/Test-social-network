@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bc12995-15cc-4ae2-bc3a-5bdd5796f031" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MyPost/MyPost.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Paginator/Paginator.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Users/User.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePageWithHooks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePageWithHooks.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Auth/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Auth/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/ProfilePage/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ProfilePage/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/UsersContainer/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/UsersContainer/UsersContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/Users/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Users/actions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +120,7 @@
       <workItem from="1574979968513" duration="17776000" />
       <workItem from="1575390076583" duration="14562000" />
       <workItem from="1575464181334" duration="51000" />
-      <workItem from="1575713186014" duration="6408000" />
+      <workItem from="1575713186014" duration="7962000" />
     </task>
     <servers />
   </component>
