@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8bc12995-15cc-4ae2-bc3a-5bdd5796f031" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Paginator/Paginator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Paginator/Paginator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/UsersContainer/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/UsersContainer/UsersContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/Users/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Users/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +37,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Users" />
@@ -119,16 +124,52 @@
       <workItem from="1575390076583" duration="14562000" />
       <workItem from="1575464181334" duration="51000" />
       <workItem from="1575713186014" duration="7962000" />
+      <workItem from="1575875251514" duration="5765000" />
     </task>
+    <task id="LOCAL-00001" summary="fix code">
+      <created>1575726503101</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575726503102</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix code" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Inspections" timestamp="1575715294244">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1575715294244" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1575890650684">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1575890650684" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1575877835852">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1575877835852" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1575875928188">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1575875928188" />
   </component>
 </project>

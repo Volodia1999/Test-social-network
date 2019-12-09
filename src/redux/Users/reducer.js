@@ -8,7 +8,7 @@ const FOLLOWING_IN_PROGRESS = 'FOLLOWING_IN_PROGRESS';
 
 const initialState = {
     users: [],
-    countUsers: 100,
+    countUsers: 10,
     totalUsers: 0,
     currentPage: 1,
     isLoading: false,

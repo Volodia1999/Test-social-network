@@ -19,8 +19,7 @@ class UsersContainer extends React.Component {
 
     render() {
         const {totalUsers, countUsers, users, currentPage, follow, unfollow, followingInProgress, isLoading} = this.props;
-        return <>
-            <Users
+        return <Users
                 totalUsers={totalUsers}
                 countUsers={countUsers}
                 users={users}
@@ -31,7 +30,6 @@ class UsersContainer extends React.Component {
                 isLoading={isLoading}
                 changePage={this.changePage}
             />
-        </>
     }
 }
 
