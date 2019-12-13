@@ -4,6 +4,7 @@ const ADD_POST = 'ADD_POST';
 const SET_PROFILE_USERS = 'SET_PROFILE_USERS';
 const SET_USERS_STATUS = 'SET_USERS_STATUS';
 const PROFILE_SUCCESS = 'PROFILE_SUCCESS';
+const UPDATE_PHOTO_SUCCESS = 'UPDATE_PHOTO_SUCCESS';
 
 export const addPost = (newPostText) => (
     {
@@ -28,6 +29,13 @@ export const getStatus = (status) => (
     {
         type: SET_USERS_STATUS,
         payload: status
+    }
+);
+
+export const updatePhoto = (photo) => (
+    {
+        type: UPDATE_PHOTO_SUCCESS,
+        photo
     }
 );
 
@@ -65,5 +73,22 @@ export const updateUserStatus = (status) => {
             dispatch(getStatus(status));
         }
     }
+};
+
+export const updateProfilePhoto = (file) => async (dispatch) => {
+        const formData = new FormData();
+        formData.append('image', file);
+
+        const response = await axios.put(`https://social-network.samuraijs.com/api/1.0/profile/photo`, formData, {
+            withCredentials: true,
+            headers: {
+                "API-KEY": "ebd1ca42-14fd-4d10-bafa-1eaa608ba0f3",
+                'Content-Type': 'multipart/form-data',
+            }
+        });
+
+        if (response.data.resultCode === 0) {
+            dispatch(updatePhoto(response.data.data.photos));
+        }
 };
 

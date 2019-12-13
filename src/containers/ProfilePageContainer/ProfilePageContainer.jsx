@@ -2,7 +2,7 @@ import React from 'react';
 import {
     addPost,
     getProfileUsers, getStatus,
-    getUserStatus,
+    getUserStatus, updateProfilePhoto,
     updateUserStatus,
 } from "../../redux/ProfilePage/actions";
 import {connect} from "react-redux";
@@ -11,6 +11,10 @@ import {compose} from "redux";
 import {ProfilePageWithHooks} from "../../components/ProfilePage/ProfilePageWithHooks";
 
 class ProfilePageContainer extends React.Component {
+    state = {
+        currentUrl: null,
+    };
+
     componentDidMount() {
         let userId = this.props.match.params.userId;
 
@@ -25,12 +29,32 @@ class ProfilePageContainer extends React.Component {
         this.props.getUserStatus(userId);
     }
 
+    //TODO this, need refactor
+    componentDidUpdate(prevProps, prevState) {
+        let userId = this.props.match.params.userId;
+
+        if (!userId) {
+            userId = this.props.loggedUser;
+        }
+
+        if (prevState.currentUrl !== userId) {
+            this.setState({
+                currentUrl: userId,
+            });
+
+            this.props.getProfileUsers(userId);
+            this.props.getUserStatus(userId);
+        }
+    }
+
     render() {
         return (
             <ProfilePageWithHooks {...this.props}
-                         addPost={this.props.addPost}
-                         getStatus={this.props.getStatus}
-                         updateUserStatus={this.props.updateUserStatus}
+                                  isOwner={!this.props.match.params.userId}
+                                  addPost={this.props.addPost}
+                                  getStatus={this.props.getStatus}
+                                  updateUserStatus={this.props.updateUserStatus}
+                                  updateProfilePhoto={this.props.updateProfilePhoto}
             />
         )
     }
@@ -68,4 +92,5 @@ export default compose(
         getProfileUsers,
         getUserStatus,
         updateUserStatus,
+        updateProfilePhoto
     }))(ProfilePageContainer);

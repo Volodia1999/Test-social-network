@@ -8,11 +8,11 @@ export const Header = (props) => (
             src='https://cdn3.iconfinder.com/data/icons/picons-social/57/56-apple-512.png'
             alt='logo'
             width={80}/>
-        <div className='name-header'>Social joking network</div>
+        <div className='name-header'>Social network</div>
         <div className='text-right login align-self-center mr-2'>
             {props.auth.isAuth
                 ? <div>
-                    <NavLink to={`/profile/${props.loggedUserId}`} className='font-weight-normal'>{props.auth.login}</NavLink>
+                    <NavLink to='/profile' className='font-weight-normal'>{props.auth.login}</NavLink>
                     <button className='bg-transparent border-0 font-weight-bold' onClick={props.logout}>
                         Log out
                     </button>

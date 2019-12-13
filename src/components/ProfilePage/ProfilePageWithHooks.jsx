@@ -28,6 +28,12 @@ export const ProfilePageWithHooks = (props) => {
         setNewStatus(e.currentTarget.value)
     };
 
+    const updateProfileAvatar = (e) => {
+        if (e.target.files.length) {
+            props.updateProfilePhoto(e.target.files[0]);
+        }
+    };
+
     const {profile, posts, status} = props.profilePage;
 
     const addProfilePost = (values) => {
@@ -37,6 +43,8 @@ export const ProfilePageWithHooks = (props) => {
     if (!profile || props.loading) {
         return <Spinner color='primary' className='m-auto'/>
     }
+
+    const cursorOnAvatar = (props.isOwner && 'avatar');
 
     return (
         <div className='bg-info d-flex flex-column w-100'>
@@ -48,25 +56,31 @@ export const ProfilePageWithHooks = (props) => {
             />
             <div className='d-flex mt-2'>
                 <div>
-                    <label><input accept='image/jpeg, image/png' type='file' autoComplete='off'
-                                  style={{display: 'none'}}/>
+                    <label>{props.isOwner && <input
+                        accept='image/jpeg, image/png'
+                        type='file'
+                        autoComplete='off'
+                        onChange={updateProfileAvatar}
+                        style={{display: 'none'}}/>}
                         <img
-                            src={profile.photos.large || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI-ulE8Ev4HVagvCD_iN9urExqcxsM5rzgG7sZ--g1_7FWCNz2&s'}
+                            src={profile.photos.large || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOfm4q4PH4tj38ETy9w66xSAhhclujI9c4MpJxtFyOD9h9vLG2&s'}
                             alt='avatar'
-                            className='rounded-circle align-self-baseline avatar'
+                            className={`rounded-circle align-self-baseline ${cursorOnAvatar}`}
                             width={120}
                         />
                     </label>
                 </div>
                 <div className='ml-2'>
                     <p><b>Name</b>: {profile.fullName}</p>
-                    <p><b>Email</b>: {profile.contacts.instagram || 'think_@about_it:)'}</p>
+                    <p><b>About Me</b>: {profile.aboutMe || 'think_@about_it:)'}</p>
                     {!editMode &&
-                    <p onDoubleClick={activeMode}>{status ? status : '-----'}</p>
+                    <p onDoubleClick={props.isOwner && activeMode}><b>Status</b>: {status ? status : '-----'}</p>
                     }
                     {editMode &&
                     <input onBlur={noActiveMode} onChange={updateStatus} value={currentStatus} autoFocus={true}/>
                     }
+                    {props.isOwner &&
+                    <button className='bg-transparent border-0 font-weight-bold'>Edit Profile</button>}
                 </div>
             </div>
             <p className='ml-3 font-weight-bolder'>My posts</p>

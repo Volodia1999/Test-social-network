@@ -2,6 +2,7 @@ const ADD_POST = 'ADD_POST';
 const SET_PROFILE_USERS = 'SET_PROFILE_USERS';
 const SET_USERS_STATUS = 'SET_USERS_STATUS';
 const PROFILE_SUCCESS = 'PROFILE_SUCCESS';
+const UPDATE_PHOTO_SUCCESS = 'UPDATE_PHOTO_SUCCESS';
 
 const initialState = {
     posts: [
@@ -46,6 +47,13 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
             status: action.payload
+            }
+        }
+
+        case UPDATE_PHOTO_SUCCESS: {
+            return {
+                ...state,
+                profile: {...state.profile, photo: action.photo}
             }
         }
 
