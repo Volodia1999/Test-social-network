@@ -3,6 +3,14 @@ import {stopSubmit} from 'redux-form'
 
 const SET_AUTH_USER = 'SET_AUTH_USER';
 const LOGIN_PENDING = 'LOGIN_PENDING';
+const GET_CAPTCHA_URL_SUCCESS = 'GET_CAPTCHA_URL_SUCCESS';
+
+const getCaptchaUrlSuccess = (captchaUrl) => (
+    {
+        type: GET_CAPTCHA_URL_SUCCESS,
+        payload: {captchaUrl}
+    }
+);
 
 export const loginPending = (pending) => (
     {
@@ -30,20 +38,35 @@ export const getAuthUser = () => {
     }
 };
 
-export const login = (email, password, rememberMe = false) => {
+export const getCaptchaUrl = () => {
+    return async (dispatch) => {
+        const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/security/get-captcha-url`, {
+            withCredentials: true
+        });
+        const captchaUrl = response.data.url;
+        dispatch(getCaptchaUrlSuccess(captchaUrl));
+    }
+};
+
+export const login = (email, password, rememberMe = false, captchaUrl) => {
     return async (dispatch) => {
         dispatch(loginPending(true));
         const response = await axios.post(`https://social-network.samuraijs.com/api/1.0/auth/login`, {
             email,
             password,
-            rememberMe
+            rememberMe,
+            captchaUrl
         }, {
             withCredentials: true
         });
+        console.log(response);
         if (response.data.resultCode === 0) {
             dispatch(getAuthUser());
             dispatch(loginPending(false));
         } else {
+            if (response.data.resultCode === 10) {
+                dispatch(getCaptchaUrl());
+            }
             let message = response.data.messages.length > 0 ? response.data.messages[0] : 'Server error';
             dispatch(stopSubmit('login', {_error: message}));
             dispatch(loginPending(false));

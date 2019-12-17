@@ -18,7 +18,7 @@ class AuthContainer extends React.Component {
 const mapStateToProps = (state) => (
     {
         auth: state.auth,
-        loggedUserId: state.auth.userId
+        loggedUserId: state.auth.userId,
     }
 );
 

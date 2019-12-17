@@ -10,7 +10,7 @@ import {withRouter} from "react-router-dom";
 import {compose} from "redux";
 import {ProfilePageWithHooks} from "../../components/ProfilePage/ProfilePageWithHooks";
 
-class ProfilePageContainer extends React.Component {
+class ProfilePageContainer extends React.PureComponent {
     state = {
         currentUrl: null,
     };

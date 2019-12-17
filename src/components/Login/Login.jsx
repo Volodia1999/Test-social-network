@@ -10,7 +10,7 @@ import {Redirect} from "react-router-dom";
 const maxLength20 = maxLength(20);
 const minLength5 = minLength(5);
 
-const LoginForm = ({handleSubmit, error, isPendingLogin}) => {
+const LoginForm = ({handleSubmit, error, isPendingLogin, captchaUrl}) => {
     return (
         <form className='m-auto w-50' onSubmit={handleSubmit}>
             <Row className='mt-2'>
@@ -29,6 +29,15 @@ const LoginForm = ({handleSubmit, error, isPendingLogin}) => {
                        validate={[required, maxLength20, minLength5]}
                        component={LoginInput}/>
             </Row>
+            {captchaUrl &&
+            <img src={captchaUrl} alt=''/>
+            }
+            {captchaUrl && <Field className='m-auto col-md-6 col-12'
+                                  placeholder='Enter captcha...'
+                                  name='setCaptcha'
+                                  validate={[required]}
+                                  component={LoginInput}/>
+            }
             {error &&
             <div>
                 <h6 className='mt-1 text-danger'>{error}</h6>
@@ -40,7 +49,7 @@ const LoginForm = ({handleSubmit, error, isPendingLogin}) => {
             </div>
             <Row className='mt-2'>
                 <Button className='m-auto col-md-6 col-12' color='info'>
-                    {isPendingLogin ? <Spinner color='white' size='sm' /> : 'Log In'}
+                    {isPendingLogin ? <Spinner color='white' size='sm'/> : 'Log In'}
                 </Button>
             </Row>
             <a
@@ -56,9 +65,9 @@ const LoginReduxForm = reduxForm({
     form: 'login'
 })(LoginForm);
 
-const Login = ({login, isAuth, isPendingLogin}) => {
+const Login = ({login, isAuth, isPendingLogin, captchaUrl}) => {
     const onSubmit = (values) => {
-        login(values.email, values.password, values.rememberMe, true);
+        login(values.email, values.password, values.rememberMe, values.setCaptcha);
     };
 
     if (isAuth) {
@@ -68,7 +77,7 @@ const Login = ({login, isAuth, isPendingLogin}) => {
         <Container>
             <Row className='text-center'>
                 <h3 className='col-12'><b>Login</b></h3>
-                <LoginReduxForm isPendingLogin={isPendingLogin} onSubmit={onSubmit}/>
+                <LoginReduxForm captchaUrl={captchaUrl} isPendingLogin={isPendingLogin} onSubmit={onSubmit}/>
             </Row>
         </Container>
     )
@@ -77,6 +86,7 @@ const Login = ({login, isAuth, isPendingLogin}) => {
 const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
     isPendingLogin: state.auth.isPendingLogin,
+    captchaUrl: state.auth.captchaUrl
 });
 
 export default connect(mapStateToProps, {login})(Login);
