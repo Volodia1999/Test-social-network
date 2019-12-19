@@ -35,6 +35,10 @@ class ProfilePageContainer extends React.PureComponent {
 
         if (!userId) {
             userId = this.props.loggedUser;
+
+            if (!userId) {
+                this.props.history.push('/login');
+            }
         }
 
         if (prevState.currentUrl !== userId) {

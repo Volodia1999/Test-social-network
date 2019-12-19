@@ -19,6 +19,7 @@ const mapStateToProps = (state) => (
     {
         auth: state.auth,
         loggedUserId: state.auth.userId,
+        isPendingLogOut: state.auth.isPendingLogOut
     }
 );
 

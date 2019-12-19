@@ -3,18 +3,26 @@ import {stopSubmit} from 'redux-form'
 
 const SET_AUTH_USER = 'SET_AUTH_USER';
 const LOGIN_PENDING = 'LOGIN_PENDING';
+const LOG_OUT_PENDING = 'LOG_OUT_PENDING';
 const GET_CAPTCHA_URL_SUCCESS = 'GET_CAPTCHA_URL_SUCCESS';
 
 const getCaptchaUrlSuccess = (captchaUrl) => (
     {
         type: GET_CAPTCHA_URL_SUCCESS,
-        payload: {captchaUrl}
+        payload: captchaUrl
     }
 );
 
 export const loginPending = (pending) => (
     {
         type: LOGIN_PENDING,
+        payload: pending
+    }
+);
+
+export const logoutPending = (pending) => (
+    {
+        type: LOG_OUT_PENDING,
         payload: pending
     }
 );
@@ -38,16 +46,6 @@ export const getAuthUser = () => {
     }
 };
 
-export const getCaptchaUrl = () => {
-    return async (dispatch) => {
-        const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/security/get-captcha-url`, {
-            withCredentials: true
-        });
-        const captchaUrl = response.data.url;
-        dispatch(getCaptchaUrlSuccess(captchaUrl));
-    }
-};
-
 export const login = (email, password, rememberMe = false, captchaUrl) => {
     return async (dispatch) => {
         dispatch(loginPending(true));
@@ -59,7 +57,6 @@ export const login = (email, password, rememberMe = false, captchaUrl) => {
         }, {
             withCredentials: true
         });
-        console.log(response);
         if (response.data.resultCode === 0) {
             dispatch(getAuthUser());
             dispatch(loginPending(false));
@@ -74,8 +71,17 @@ export const login = (email, password, rememberMe = false, captchaUrl) => {
     }
 };
 
+export const getCaptchaUrl = () => async (dispatch) => {
+    const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/security/get-captcha-url`, {
+        withCredentials: true
+    });
+    const captchaUrl = response.data.url;
+    dispatch(getCaptchaUrlSuccess(captchaUrl));
+};
+
 export const logout = () => {
     return async (dispatch) => {
+        dispatch(logoutPending(true));
         const response = await axios.delete(`https://social-network.samuraijs.com/api/1.0/auth/login`, {
             withCredentials: true,
             headers: {
@@ -84,6 +90,7 @@ export const logout = () => {
         });
         if (response.data.resultCode === 0) {
             dispatch(setAuthUser(null, null, null, false));
+            dispatch(logoutPending(false));
         }
     }
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import {NavLink} from "react-router-dom";
+import {Spinner} from "reactstrap";
 
 export const Header = (props) => (
     <div className='bg-success d-flex'>
@@ -14,7 +15,7 @@ export const Header = (props) => (
                 ? <div>
                     <NavLink to='/profile' className='font-weight-normal'>{props.auth.login}</NavLink>
                     <button className='bg-transparent border-0 font-weight-bold' onClick={props.logout}>
-                        Log out
+                        {props.isPendingLogOut ? <Spinner color='white' size='sm'/> : 'Log out'}
                     </button>
                 </div>
                 : <NavLink to='/login'>Login</NavLink>}
