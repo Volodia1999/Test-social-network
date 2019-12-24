@@ -13,6 +13,7 @@ import Settings from "./components/Settings/Settings";
 import {initializeApp} from "./redux/App/actions";
 import {Spinner} from "reactstrap";
 import {compose} from "redux";
+import Search from "./components/Search/Search";
 
 class App extends React.Component {
 
@@ -35,6 +36,7 @@ class App extends React.Component {
                     <Route path='/login' render={() => <Login/>}/>
                     <Route path='/music' render={() => <Music/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>
+                    <Route path='/search' render={() => <Search/>}/>
                 </div>
             </div>
         )

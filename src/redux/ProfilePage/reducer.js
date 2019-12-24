@@ -12,7 +12,8 @@ const initialState = {
     ],
     profile: null,
     status: '',
-    loading: false
+    loading: false,
+    profilePhoto: null,
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -53,7 +54,7 @@ const profileReducer = (state = initialState, action) => {
         case UPDATE_PHOTO_SUCCESS: {
             return {
                 ...state,
-                profile: {...state.profile, photo: action.photo}
+                profilePhoto: action.payload
             }
         }
 

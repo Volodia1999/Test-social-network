@@ -18,10 +18,8 @@ const Paginator = ({totalUsers, countUsers, currentPage, changePage, isLoading, 
             {currentPortion > 1 && <button className='bg-transparent border-0'
                                            onClick={() => setCurrentPortion(currentPortion - 1)}>🡄</button>}
             {pages.filter((p) => p >= leftPage && p <= rightPage).map((page) => (
-                    <div>
-
+                    <div key={page.id}>
                             <span
-                                key={page.id}
                                 className={currentPage === page ? 'cursor-pointer font-weight-bold mr-2' : 'mr-2 cursor-pointer'}
                                 onClick={() => {
                                     changePage(page)

@@ -32,10 +32,10 @@ export const getStatus = (status) => (
     }
 );
 
-export const updatePhoto = (photo) => (
+export const updatePhoto = (profilePhoto) => (
     {
         type: UPDATE_PHOTO_SUCCESS,
-        photo
+        payload: profilePhoto
     }
 );
 

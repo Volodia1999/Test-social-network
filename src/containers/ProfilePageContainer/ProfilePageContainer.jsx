@@ -11,11 +11,7 @@ import {compose} from "redux";
 import {ProfilePageWithHooks} from "../../components/ProfilePage/ProfilePageWithHooks";
 
 class ProfilePageContainer extends React.PureComponent {
-    state = {
-        currentUrl: null,
-    };
-
-    componentDidMount() {
+    refreshProfile() {
         let userId = this.props.match.params.userId;
 
         if (!userId) {
@@ -29,25 +25,14 @@ class ProfilePageContainer extends React.PureComponent {
         this.props.getUserStatus(userId);
     }
 
+    componentDidMount() {
+        this.refreshProfile();
+    }
+
     //TODO this, need refactor
     componentDidUpdate(prevProps, prevState) {
-        let userId = this.props.match.params.userId;
-
-        if (!userId) {
-            userId = this.props.loggedUser;
-
-            if (!userId) {
-                this.props.history.push('/login');
-            }
-        }
-
-        if (prevState.currentUrl !== userId) {
-            this.setState({
-                currentUrl: userId,
-            });
-
-            this.props.getProfileUsers(userId);
-            this.props.getUserStatus(userId);
+        if (this.props.match.params.userId !== prevProps.match.params.userId || this.props.profilePhoto !== prevProps.profilePhoto) {
+            this.refreshProfile();
         }
     }
 
@@ -69,7 +54,8 @@ const mapStateToProps = (state) => (
         profilePage: state.profilePage,
         isAuth: state.auth.isAuth,
         loggedUser: state.auth.userId,
-        loading: state.profilePage.loading
+        loading: state.profilePage.loading,
+        profilePhoto: state.profilePage.profilePhoto
     }
 );
 

@@ -9,10 +9,11 @@ import MyPost from "../MyPost/MyPost";
 export const ProfilePageWithHooks = (props) => {
     const [editMode, editActiveMode] = useState(false);
     const [currentStatus, setNewStatus] = useState(props.profilePage.status);
+    const {profile, posts, status} = props.profilePage;
 
     useEffect(() => {
-        setNewStatus(props.profilePage.status);
-    }, [props.profilePage.status]);
+        setNewStatus(status);
+    }, [status]);
 
 
     const activeMode = () => {
@@ -33,8 +34,6 @@ export const ProfilePageWithHooks = (props) => {
             props.updateProfilePhoto(e.target.files[0]);
         }
     };
-
-    const {profile, posts, status} = props.profilePage;
 
     const addProfilePost = (values) => {
         props.addPost(values.profileMessage);

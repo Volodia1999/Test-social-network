@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8bc12995-15cc-4ae2-bc3a-5bdd5796f031" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AuthContainer/AuthContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AuthContainer/AuthContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Paginator/Paginator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Paginator/Paginator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePageWithHooks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePageWithHooks.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/ProfilePageContainer/ProfilePageContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ProfilePageContainer/ProfilePageContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Auth/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Auth/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Auth/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Auth/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/ProfilePage/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ProfilePage/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/ProfilePage/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ProfilePage/reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Робочий стіл/NodePractice" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -130,7 +131,9 @@
       <workItem from="1576074262430" duration="1161000" />
       <workItem from="1576260154881" duration="9423000" />
       <workItem from="1576600824472" duration="11020000" />
-      <workItem from="1576751802091" duration="3320000" />
+      <workItem from="1576751802091" duration="3555000" />
+      <workItem from="1576841121122" duration="5135000" />
+      <workItem from="1577138426130" duration="9139000" />
     </task>
     <task id="LOCAL-00001" summary="fix code">
       <created>1575726503101</created>
@@ -160,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576613661833</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix code and add loader">
+      <created>1576755348028</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1576755348028</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +194,8 @@
     <MESSAGE value="fix pagination" />
     <MESSAGE value="fix profilePage" />
     <MESSAGE value="add captcha" />
-    <option name="LAST_COMMIT_MESSAGE" value="add captcha" />
+    <MESSAGE value="fix code and add loader" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix code and add loader" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Inspections" timestamp="1575715294244">
@@ -195,18 +206,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1575892453262" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1576613658802">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1576755344316">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576613658802" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576755344316" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1575893821564">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1575893821564" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1576074320834">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1576841203231">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576074320834" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576841203231" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1575890712983">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -215,9 +226,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1576754248892" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1576754224676">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1577180706477">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1576754224676" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577180706477" />
   </component>
 </project>
