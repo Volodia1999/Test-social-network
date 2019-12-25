@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8bc12995-15cc-4ae2-bc3a-5bdd5796f031" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +58,23 @@
       <recent name="F:\Робочий стіл\login\src\components\Header" />
       <recent name="C:\Users\Ivan\Desktop\email\src" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.deploy" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -131,7 +146,7 @@
       <workItem from="1576841121122" duration="5135000" />
       <workItem from="1577138426130" duration="10887000" />
       <workItem from="1577214885208" duration="1348000" />
-      <workItem from="1577306669039" duration="4470000" />
+      <workItem from="1577306669039" duration="5142000" />
     </task>
     <task id="LOCAL-00001" summary="fix code">
       <created>1575726503101</created>
@@ -224,6 +239,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576841203231" />
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1577314991241">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577314991241" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1577314991241">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577314991241" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1577314991240">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577314991240" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1577314991241">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577314991241" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1575890712983">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
