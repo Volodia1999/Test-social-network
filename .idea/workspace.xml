@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8bc12995-15cc-4ae2-bc3a-5bdd5796f031" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavbarProfile/NavbarProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarProfile/NavbarProfile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavbarProfile/NavbarProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarProfile/NavbarProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePageWithHooks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePageWithHooks.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Navbar/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Navbar/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +131,7 @@
       <workItem from="1576841121122" duration="5135000" />
       <workItem from="1577138426130" duration="10887000" />
       <workItem from="1577214885208" duration="1348000" />
-      <workItem from="1577306669039" duration="3843000" />
+      <workItem from="1577306669039" duration="4470000" />
     </task>
     <task id="LOCAL-00001" summary="fix code">
       <created>1575726503101</created>
