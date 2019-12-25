@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import {Spinner} from "reactstrap";
 
 export const Header = (props) => (
-    <div className='bg-success d-flex'>
+    <div className='bg-success header d-flex'>
         <img
             src='https://cdn3.iconfinder.com/data/icons/picons-social/57/56-apple-512.png'
             alt='logo'

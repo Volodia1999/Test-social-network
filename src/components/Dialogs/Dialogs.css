@@ -8,3 +8,7 @@
     color: #000;
     line-height: 2.5;
 }
+
+.dialog {
+    border-radius: 10px;
+}

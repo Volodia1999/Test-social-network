@@ -10,7 +10,7 @@ export const Dialogs = (props) => {
     };
 
     return (
-        <div className='bg-info w-100'>
+        <div className='bg-info w-100 mt-1 dialog'>
             <p className='font-weight-bold text-center'>Dialogs</p>
             <div className='d-flex'>
                 <div className='col-4'>

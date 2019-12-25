@@ -46,13 +46,7 @@ export const ProfilePageWithHooks = (props) => {
     const cursorOnAvatar = (props.isOwner && 'avatar');
 
     return (
-        <div className='bg-info d-flex flex-column w-100'>
-            <img
-                src='http://saskatoonfood.ca/images/headers/1000x200-StoonDusk.jpg'
-                alt='profile'
-                height={200}
-                className='img-fluid'
-            />
+        <div className='bg-info d-flex flex-column w-100 mt-1 dialog'>
             <div className='d-flex mt-2'>
                 <div>
                     <label>{props.isOwner && <input
@@ -73,7 +67,9 @@ export const ProfilePageWithHooks = (props) => {
                     <p><b>Name</b>: {profile.fullName}</p>
                     <p><b>About Me</b>: {profile.aboutMe || 'think_@about_it:)'}</p>
                     {!editMode &&
-                    <p onDoubleClick={props.isOwner && activeMode}><b>Status</b>: {status ? status : '-----'}</p>
+                    <p onDoubleClick={props.isOwner && activeMode}><b>Status</b>: {status ? status : '-----'}
+                    <span><i> (double click for change)</i></span>
+                    </p>
                     }
                     {editMode &&
                     <input onBlur={noActiveMode} onChange={updateStatus} value={currentStatus} autoFocus={true}/>
@@ -100,7 +96,7 @@ const ProfileForm = (props) => {
                 placeholder='write your post...'
                 validate={[required, maxLength30]}
                 className='post w-100 bg-transparent'/>
-            <button className='float-right btn btn-danger'>Add post</button>
+            <button className='float-right mr-1 btn btn-danger btn-sm'>Add post</button>
         </form>
     )
 };

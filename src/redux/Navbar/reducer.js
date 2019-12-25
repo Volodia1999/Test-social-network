@@ -6,6 +6,7 @@ const initialState = {
             {id: 4, name_menu: 'Music', url: '/music'},
             {id: 5, name_menu: 'Settings', url: '/settings'},
             {id: 6, name_menu: 'Find users', url: '/users', paddingt: 'lineheight'},
+            {id: 7, name_menu: 'Search', url: '/search', paddingt: 'lineheight'},
         ]
 };
 
