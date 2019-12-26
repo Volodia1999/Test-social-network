@@ -6,10 +6,10 @@ const LOGIN_PENDING = 'LOGIN_PENDING';
 const LOG_OUT_PENDING = 'LOG_OUT_PENDING';
 const GET_CAPTCHA_URL_SUCCESS = 'GET_CAPTCHA_URL_SUCCESS';
 
-const getCaptchaUrlSuccess = (captchaUrl) => (
+const getSuccessCaptchaUrl = (captchaUrl) => (
     {
         type: GET_CAPTCHA_URL_SUCCESS,
-        payload: captchaUrl
+        captchaUrl
     }
 );
 
@@ -34,6 +34,15 @@ export const setAuthUser = (userId, login, email, isAuth) => (
     }
 );
 
+const getCaptchaUrl = () => async (dispatch) => {
+    const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/security/get-captcha-url`, {
+        withCredentials: true
+    });
+
+    const captchaUrl = response.data.url;
+    dispatch(getSuccessCaptchaUrl(captchaUrl));
+};
+
 export const getAuthUser = () => {
     return async (dispatch) => {
         const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {
@@ -46,38 +55,34 @@ export const getAuthUser = () => {
     }
 };
 
-export const login = (email, password, rememberMe = false, captchaUrl) => {
-    return async (dispatch) => {
-        dispatch(loginPending(true));
-        const response = await axios.post(`https://social-network.samuraijs.com/api/1.0/auth/login`, {
-            email,
-            password,
-            rememberMe,
-            captchaUrl
-        }, {
-            withCredentials: true
-        });
-        if (response.data.resultCode === 0) {
-            dispatch(getAuthUser());
-            dispatch(loginPending(false));
-        } else {
-            if (response.data.resultCode === 10) {
-                dispatch(getCaptchaUrl());
-            }
-            let message = response.data.messages.length > 0 ? response.data.messages[0] : 'Server error';
-            dispatch(stopSubmit('login', {_error: message}));
-            dispatch(loginPending(false));
-        }
-    }
-};
+export const login = (email, password, rememberMe = false, captchaUrl) => (
+     async (dispatch) => {
+         dispatch(loginPending(true));
+         const response = await axios.post(`https://social-network.samuraijs.com/api/1.0/auth/login`, {
+             email,
+             password,
+             rememberMe,
+             captchaUrl
+         }, {
+             withCredentials: true,
+             headers: {
+                 "API-KEY": "ebd1ca42-14fd-4d10-bafa-1eaa608ba0f3",
+             }
+         });
+         if (response.data.resultCode === 0) {
+             dispatch(getAuthUser());
+             dispatch(loginPending(false));
+         } else {
+             if (response.data.resultCode === 10) {
+                 dispatch(getCaptchaUrl());
+             }
+             let message = response.data.messages.length > 0 ? response.data.messages[0] : 'Server error';
+             dispatch(stopSubmit('login', {_error: message}));
+             dispatch(loginPending(false));
+         }
+     }
+);
 
-export const getCaptchaUrl = () => async (dispatch) => {
-    const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/security/get-captcha-url`, {
-        withCredentials: true
-    });
-    const captchaUrl = response.data.url;
-    dispatch(getCaptchaUrlSuccess(captchaUrl));
-};
 
 export const logout = () => {
     return async (dispatch) => {

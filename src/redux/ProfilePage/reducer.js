@@ -9,6 +9,7 @@ const initialState = {
         {id: 1, message: 'Hi, how are you?', count_like: 0},
         {id: 2, message: 'Hey, whats new?', count_like: 100},
         {id: 3, message: 'What do you think about myself?', count_like: 34},
+        {id: 4, message: 'Tell me about your last experience.', count_like: 5},
     ],
     profile: null,
     status: '',
@@ -20,7 +21,7 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST: {
             const newPost = {
-                id: 4,
+                id: 5,
                 message: action.newPostText,
                 count_like: 3
             };

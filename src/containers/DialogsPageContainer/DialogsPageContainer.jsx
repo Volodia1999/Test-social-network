@@ -1,8 +1,18 @@
+import React from 'react';
 import {addMessageActionCreator} from "../../redux/DialogsPage/actions";
 import {Dialogs} from "../../components/Dialogs/Dialogs";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
+
+class DialogsContainer extends React.PureComponent {
+    render() {
+        const dialogId = this.props.match.params.dialogId;
+        return (
+            <Dialogs dialogsPage={this.props.dialogsPage} dialogId={dialogId} addMessageDialog={this.props.addMessageDialog}/>
+        )
+    }
+}
 
 const mapStateToProps = (state) => (
     {
@@ -18,7 +28,8 @@ const mapDispatchToProps = (dispatch) => (
     }
 );
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+
 
 export default compose(
-    withRouter)(DialogsContainer);
+    withRouter,
+    connect(mapStateToProps, mapDispatchToProps))(DialogsContainer);

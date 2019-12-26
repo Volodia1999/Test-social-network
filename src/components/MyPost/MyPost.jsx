@@ -4,7 +4,7 @@ const MyPost = React.memo(({post}) => {
     return (
         <div className='mt-2'>
             <img
-                src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_AtFfucscEuUUlO8QJLqDko3nhoUhZ7VkjwVLalD0Ck_A54hX&s'
+                src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyVAtTs16Um_4zfeZFewmuzTWDOCTwyXhntHJOjFd66FpwGKkYoQ&s'
                 alt='avatar'
                 width={32}
                 height={32}

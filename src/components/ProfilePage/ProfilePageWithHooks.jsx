@@ -25,6 +25,12 @@ export const ProfilePageWithHooks = (props) => {
         props.updateUserStatus(currentStatus);
     };
 
+    const pressEnter = (target) => {
+        if (target.charCode === 13) {
+            noActiveMode();
+        }
+    };
+
     const updateStatus = (e) => {
         setNewStatus(e.currentTarget.value)
     };
@@ -43,7 +49,7 @@ export const ProfilePageWithHooks = (props) => {
         return <Spinner color='primary' className='m-auto'/>
     }
 
-    const cursorOnAvatar = (props.isOwner && 'avatar');
+    const cursorOnAvatar = (props.isOwner && 'cursor-pointer');
 
     return (
         <div className='bg-info d-flex flex-column w-100 mt-1 dialog'>
@@ -67,15 +73,22 @@ export const ProfilePageWithHooks = (props) => {
                     <p><b>Name</b>: {profile.fullName}</p>
                     <p><b>About Me</b>: {profile.aboutMe || 'think_@about_it:)'}</p>
                     {!editMode &&
-                    <p onDoubleClick={props.isOwner && activeMode}><b>Status</b>: {status ? status : '-----'}
-                    <span><i> (double click for change)</i></span>
+                    <p onDoubleClick={props.isOwner && activeMode}>
+                        <b>Status</b>: <span className='cursor-pointer'>{status ? status : '-----'}</span>
+                        <span><i>{props.isOwner && ' (double click for change)'}</i></span>
                     </p>
                     }
                     {editMode &&
-                    <input onBlur={noActiveMode} onChange={updateStatus} value={currentStatus} autoFocus={true}/>
+                    <input
+                        onBlur={noActiveMode}
+                        onChange={updateStatus}
+                        value={currentStatus}
+                        onKeyPress={pressEnter}
+                        autoFocus={true}/>
                     }
-                    {props.isOwner &&
-                    <button className='bg-transparent border-0 font-weight-bold'>Edit Profile</button>}
+                    {props.isOwner && <div>
+                        <button className='bg-transparent border-0 font-weight-bold'>Edit Profile</button>
+                    </div>}
                 </div>
             </div>
             <p className='ml-3 font-weight-bolder'>My posts</p>
@@ -85,7 +98,7 @@ export const ProfilePageWithHooks = (props) => {
     )
 };
 
-const maxLength30 = maxLength(30);
+const maxLength50 = maxLength(50);
 
 const ProfileForm = (props) => {
     return (
@@ -94,7 +107,7 @@ const ProfileForm = (props) => {
                 component={Textarea}
                 name='profileMessage'
                 placeholder='write your post...'
-                validate={[required, maxLength30]}
+                validate={[required, maxLength50]}
                 className='post w-100 bg-transparent'/>
             <button className='float-right mr-1 btn btn-danger btn-sm'>Add post</button>
         </form>

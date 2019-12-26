@@ -7,11 +7,11 @@ const initialState = {
         {id: 3, name_author: 'Oleh', url: '/dialog/3'},
     ],
     messages: [
-        {id: 1, message: 'What is the weather now?'},
-        {id: 2, message: 'What is your name?'},
-        {id: 3, message: 'What is your favorite football player?'},
-        {id: 4, message: 'Today'},
-        {id: 5, message: 'Yesterday'},
+        {id: 1, message: 'What is the weather now?', urlDialog: '1'},
+        {id: 2, message: 'What is your name?', urlDialog: '2'},
+        {id: 3, message: 'What is your favorite football player?', urlDialog: '3'},
+        {id: 4, message: 'Today', urlDialog: '2'},
+        {id: 5, message: 'Yesterday', urlDialog: '1'},
     ],
 };
 
@@ -21,6 +21,7 @@ const dialogReducer = (state = initialState, action) => {
             const newMessage = {
                 id: 6,
                 message: action.newMessageText,
+                urlDialog: '3',
             };
             return {
                 ...state,

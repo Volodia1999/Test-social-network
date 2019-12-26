@@ -55,7 +55,7 @@ export const SearchItems = ({name, price, category}) => {
                 <Modal isOpen={modal} toggle={toggle}>
                     <ModalHeader>{category}</ModalHeader>
                     <ModalBody>
-                        {name}
+                        {name} costs {price}
                     </ModalBody>
                 </Modal>
             </div>

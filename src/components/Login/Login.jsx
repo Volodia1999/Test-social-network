@@ -29,15 +29,14 @@ const LoginForm = ({handleSubmit, error, isPendingLogin, captchaUrl}) => {
                        validate={[required, maxLength20, minLength5]}
                        component={LoginInput}/>
             </Row>
-            {captchaUrl &&
-            <img src={captchaUrl} alt=''/>
-            }
-            {captchaUrl && <Field className='m-auto col-md-6 col-12'
-                                  placeholder='Enter captcha...'
-                                  name='setCaptcha'
-                                  validate={[required]}
-                                  component={LoginInput}/>
-            }
+            {captchaUrl && <div>
+                <img src={captchaUrl} alt='' />
+                <Field className='m-auto col-md-6 col-12'
+                       name='setCaptcha'
+                       placeholder='Enter captcha...'
+                       validate={[required]}
+                       component={LoginInput}/>
+            </div> }
             {error &&
             <div>
                 <h6 className='mt-1 text-danger'>{error}</h6>
@@ -45,7 +44,7 @@ const LoginForm = ({handleSubmit, error, isPendingLogin, captchaUrl}) => {
             }
             <div className='mt-3 d-flex justify-content-center'>
                 <Field className='mr-2 mt-2' type={'checkbox'} name='rememberMe' component='input'/>
-                <h6 className='mt-1'>Remind me</h6>
+                <h6 className='mt-1'>Remember me</h6>
             </div>
             <Row className='mt-2'>
                 <Button className='m-auto col-md-6 col-12' color='info'>
@@ -65,7 +64,7 @@ const LoginReduxForm = reduxForm({
     form: 'login'
 })(LoginForm);
 
-const Login = ({login, isAuth, isPendingLogin, captchaUrl}) => {
+const Login = ({login, isAuth, isPendingLogin, ...props}) => {
     const onSubmit = (values) => {
         login(values.email, values.password, values.rememberMe, values.setCaptcha);
     };
@@ -77,7 +76,7 @@ const Login = ({login, isAuth, isPendingLogin, captchaUrl}) => {
         <Container>
             <Row className='text-center'>
                 <h3 className='col-12'><b>Login</b></h3>
-                <LoginReduxForm captchaUrl={captchaUrl} isPendingLogin={isPendingLogin} onSubmit={onSubmit}/>
+                <LoginReduxForm captchaUrl={props.captchaUrl} isPendingLogin={isPendingLogin} onSubmit={onSubmit}/>
             </Row>
         </Container>
     )

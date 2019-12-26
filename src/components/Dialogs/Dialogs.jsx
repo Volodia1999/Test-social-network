@@ -24,7 +24,7 @@ export const Dialogs = (props) => {
                 <div className='mt-1'>
                 {props.dialogsPage.messages.map((message) => (
                     <div key={message.id}>
-                        <p>{message.message}</p>
+                        {props.dialogId === message.urlDialog ? <p>{message.message}</p> : undefined }
                     </div>
                 ))}
                 </div>

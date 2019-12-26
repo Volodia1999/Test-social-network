@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route, Switch, withRouter} from "react-router-dom";
+import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 import NavbarProfileContainer from "./containers/NavbarContainer/NavbarContainer";
 import {connect} from "react-redux";
 import AuthContainer from "./containers/AuthContainer/AuthContainer";
@@ -32,14 +32,15 @@ class App extends React.Component {
                     <NavbarProfileContainer/>
                     <Switch>
                         <Route path='/profile/:userId?' render={() => <ProfilePageContainer/>}/>
-                        <Route path='/dialog' render={() => <DialogsContainer/>}/>
+                        <Route path='/dialog/:dialogId?' render={() => <DialogsContainer/>}/>
                         <Route exact path='/users' render={() => <UsersContainer/>}/>
                         <Route exact path='/login' render={() => <Login/>}/>
                         <Route exact path='/music' render={() => <Music/>}/>
                         <Route exact path='/news' render={() => <div className='text-center w-100'><h1>This will be news!</h1></div>}/>
                         <Route exact path='/settings' render={() => <Settings/>}/>
                         <Route exact path='/search' render={() => <Search/>}/>
-                        <Route path='/' render={() => <div>Error 404</div>}/>
+                        <Route exact path='/' render={() => <Redirect to='/profile' />}/>
+                        <Route path='*' render={() => <div>Error 404</div>}/>
                     </Switch>
                 </div>
             </div>

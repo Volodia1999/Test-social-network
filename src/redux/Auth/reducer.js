@@ -10,7 +10,7 @@ const initialState = {
     isAuth: false,
     isPendingLogin: false,
     isPendingLogOut: false,
-    captchaUrl: null,
+    captchaUrl: null
 };
 
 const authReducer = (state = initialState, action) => {
@@ -19,13 +19,6 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.payload
-            }
-        }
-
-        case GET_CAPTCHA_URL_SUCCESS: {
-            return {
-                ...state,
-                captchaUrl: action.payload,
             }
         }
 
@@ -42,6 +35,13 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 isPendingLogOut: action.payload
 
+            }
+        }
+
+        case GET_CAPTCHA_URL_SUCCESS: {
+            return {
+                ...state,
+                captchaUrl: action.captchaUrl
             }
         }
 
