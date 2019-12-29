@@ -20,12 +20,12 @@ const Search = () => {
 
     return (
         <div className='w-100 text-center'>
-                <h2>Search</h2>
-                <input value={currentValue} onChange={changeInputValue}/><span>Search</span>
-                <p>
-                    <span>Name </span>
-                    <span>Price</span>
-                </p>
+            <h2>Search</h2>
+            <input value={currentValue} onChange={changeInputValue} className='mb-3'/>
+            <div className='w-25 m-auto d-flex justify-content-between'>
+                <span className='ml-1'><b>Name</b></span>
+                <span><b>Price</b></span>
+            </div>
             <div className='w-25 m-auto d-flex flex-column'>
                 {search.map((s) => (
                     <div key={s.id}>

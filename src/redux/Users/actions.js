@@ -1,4 +1,4 @@
-import * as axios from "axios";
+import {UserAPI} from "../../api";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -57,60 +57,38 @@ export const setFollowing = (following, userId) => (
     }
 );
 
-export const getUsers = (currentPage, countUsers) => {
-    return async (dispatch) => {
-        dispatch(setIsLoading(true));
-        const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${countUsers}`, {
-            withCredentials: true
-        });
-        dispatch(setIsLoading(false));
-        dispatch(setUsers(response.data.items));
-        dispatch(setTotalUsers(response.data.totalCount));
-
-    }
+export const getUsers = (currentPage, countUsers) => async (dispatch) => {
+    dispatch(setIsLoading(true));
+    const response = await UserAPI.getAllUser(currentPage, countUsers);
+    dispatch(setIsLoading(false));
+    dispatch(setUsers(response.data.items));
+    dispatch(setTotalUsers(response.data.totalCount));
 };
 
-export const changePageUsers = (page, countUsers) => {
-    return async (dispatch) => {
-        dispatch(setCurrentPage(page));
-        dispatch(setIsLoading(true));
-        const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${countUsers}`, {
-            withCredentials: true
-        });
-        dispatch(setIsLoading(false));
-        dispatch(setUsers(response.data.items));
-    }
+export const changePageUsers = (page, countUsers) => async (dispatch) => {
+    dispatch(setCurrentPage(page));
+    dispatch(setIsLoading(true));
+    const response = await UserAPI.changeUserPage(page, countUsers);
+    dispatch(setIsLoading(false));
+    dispatch(setUsers(response.data.items));
 };
 
-export const follow = (userId) => {
-    return async (dispatch) => {
-        dispatch(setFollowing(true, userId));
-        const response = await axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`, {}, {
-            withCredentials: true,
-            headers: {
-                "API-KEY": "ebd1ca42-14fd-4d10-bafa-1eaa608ba0f3",
-            }
-        });
-        if (response.data.resultCode === 0) {
-            dispatch(followSuccess(userId));
-        }
-        dispatch(setFollowing(false, userId));
-
+export const follow = (userId) => async (dispatch) => {
+    dispatch(setFollowing(true, userId));
+    const response = await UserAPI.follow(userId);
+    if (response.data.resultCode === 0) {
+        dispatch(followSuccess(userId));
     }
+    dispatch(setFollowing(false, userId));
 };
 
-export const unfollow = (userId) => {
-    return async (dispatch) => {
-        dispatch(setFollowing(true, userId));
-        const response = await axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`, {
-            withCredentials: true,
-            headers: {
-                "API-KEY": "ebd1ca42-14fd-4d10-bafa-1eaa608ba0f3",
-            }
-        });
-        if (response.data.resultCode === 0) {
-            dispatch(unfollowSuccess(userId));
-        }
-        dispatch(setFollowing(false, userId));
+
+export const unfollow = (userId) => async (dispatch) => {
+    dispatch(setFollowing(true, userId));
+    const response = await UserAPI.unfollow(userId);
+    if (response.data.resultCode === 0) {
+        dispatch(unfollowSuccess(userId));
     }
+    dispatch(setFollowing(false, userId));
 };
+

@@ -49,7 +49,7 @@ export const ProfilePageWithHooks = (props) => {
         return <Spinner color='primary' className='m-auto'/>
     }
 
-    const cursorOnAvatar = (props.isOwner && 'cursor-pointer');
+    const cursorPointer = (props.isOwner && 'cursor-pointer');
 
     return (
         <div className='bg-info d-flex flex-column w-100 mt-1 dialog'>
@@ -64,7 +64,7 @@ export const ProfilePageWithHooks = (props) => {
                         <img
                             src={profile.photos.large || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOfm4q4PH4tj38ETy9w66xSAhhclujI9c4MpJxtFyOD9h9vLG2&s'}
                             alt='avatar'
-                            className={`rounded-circle align-self-baseline ${cursorOnAvatar}`}
+                            className={`rounded-circle align-self-baseline ${cursorPointer}`}
                             width={120}
                         />
                     </label>
@@ -74,7 +74,7 @@ export const ProfilePageWithHooks = (props) => {
                     <p><b>About Me</b>: {profile.aboutMe || 'think_@about_it:)'}</p>
                     {!editMode &&
                     <p onDoubleClick={props.isOwner && activeMode}>
-                        <b>Status</b>: <span className='cursor-pointer'>{status ? status : '-----'}</span>
+                        <b>Status</b>: <span className={cursorPointer}>{status ? status : '-----'}</span>
                         <span><i>{props.isOwner && ' (double click for change)'}</i></span>
                     </p>
                     }
@@ -91,7 +91,7 @@ export const ProfilePageWithHooks = (props) => {
                     </div>}
                 </div>
             </div>
-            <p className='ml-3 font-weight-bolder'>My posts</p>
+            <p className='text-center font-weight-bolder'>My posts</p>
             <ProfileReduxForm onSubmit={addProfilePost}/>
             {posts.map((post) => <MyPost post={post} key={post.id}/>)}
         </div>
@@ -102,14 +102,14 @@ const maxLength50 = maxLength(50);
 
 const ProfileForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className='mx-3'>
             <Field
                 component={Textarea}
                 name='profileMessage'
                 placeholder='write your post...'
                 validate={[required, maxLength50]}
                 className='post w-100 bg-transparent'/>
-            <button className='float-right mr-1 btn btn-danger btn-sm'>Add post</button>
+            <button className='float-right mt-1 btn btn-danger btn-sm'>Add post</button>
         </form>
     )
 };

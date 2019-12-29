@@ -1,4 +1,4 @@
-import * as axios from "axios";
+import {ProfileAPI} from "../../api";
 
 const ADD_POST = 'ADD_POST';
 const SET_PROFILE_USERS = 'SET_PROFILE_USERS';
@@ -39,56 +39,33 @@ export const updatePhoto = (profilePhoto) => (
     }
 );
 
-export const getProfileUsers = (userId) => {
-    return async (dispatch) => {
-        dispatch(profileSuccess(true));
-        const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`, {
-            withCredentials: true,
-        });
-        dispatch(setProfileUsers(response.data));
-        dispatch(profileSuccess(false));
+export const getProfileUsers = (userId) => async (dispatch) => {
+    dispatch(profileSuccess(true));
+    const response = await ProfileAPI.getUserProfile(userId);
+    dispatch(setProfileUsers(response.data));
+    dispatch(profileSuccess(false));
+};
+
+export const getUserStatus = (userId) => async (dispatch) => {
+    dispatch(profileSuccess(true));
+    const response = await ProfileAPI.getStatusUser(userId);
+    dispatch(getStatus(response.data));
+    dispatch(profileSuccess(false));
+};
+
+
+export const updateUserStatus = (status) => async (dispatch) => {
+    const response = await ProfileAPI.updateStatusUser(status);
+    if (response.data.resultCode === 0) {
+        dispatch(getStatus(status));
     }
 };
 
-export const getUserStatus = (userId) => {
-    return async (dispatch) => {
-        dispatch(profileSuccess(true));
-        const response = await axios.get(`https://social-network.samuraijs.com/api/1.0/profile/status/${userId}`, {
-            withCredentials: true,
-        });
-        dispatch(getStatus(response.data));
-        dispatch(profileSuccess(false));
-    }
-};
-
-export const updateUserStatus = (status) => {
-    return async (dispatch) => {
-        const response = await axios.put(`https://social-network.samuraijs.com/api/1.0/profile/status`, {status: status}, {
-            withCredentials: true,
-            headers: {
-                "API-KEY": "ebd1ca42-14fd-4d10-bafa-1eaa608ba0f3",
-            }
-        });
-        if (response.data.resultCode === 0) {
-            dispatch(getStatus(status));
-        }
-    }
-};
 
 export const updateProfilePhoto = (file) => async (dispatch) => {
-        const formData = new FormData();
-        formData.append('image', file);
-
-        const response = await axios.put(`https://social-network.samuraijs.com/api/1.0/profile/photo`, formData, {
-            withCredentials: true,
-            headers: {
-                "API-KEY": "ebd1ca42-14fd-4d10-bafa-1eaa608ba0f3",
-                'Content-Type': 'multipart/form-data',
-            }
-        });
-
-        if (response.data.resultCode === 0) {
-            dispatch(updatePhoto(response.data.data.photos));
-        }
+    const response = await ProfileAPI.updateAvatarProfile(file);
+    if (response.data.resultCode === 0) {
+        dispatch(updatePhoto(response.data.data.photos));
+    }
 };
 
