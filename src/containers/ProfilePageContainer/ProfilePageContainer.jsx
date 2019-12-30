@@ -31,7 +31,6 @@ class ProfilePageContainer extends React.PureComponent {
 
     //TODO this, need refactor
     componentDidUpdate(prevProps, prevState) {
-        debugger
         if (this.props.match.params.userId !== prevProps.match.params.userId || this.props.profilePhoto !== prevProps.profilePhoto) {
             this.refreshProfile();
         }

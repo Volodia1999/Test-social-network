@@ -13,7 +13,7 @@ export const addPost = (newPostText) => (
     }
 );
 
-export const profileSuccess = (loading) => ({
+export const loadingSuccess = (loading) => ({
     type: PROFILE_SUCCESS,
     payload: loading
 });
@@ -40,32 +40,37 @@ export const updatePhoto = (profilePhoto) => (
 );
 
 export const getProfileUsers = (userId) => async (dispatch) => {
-    dispatch(profileSuccess(true));
+    dispatch(loadingSuccess(true));
     const response = await ProfileAPI.getUserProfile(userId);
     dispatch(setProfileUsers(response.data));
-    dispatch(profileSuccess(false));
+    dispatch(loadingSuccess(false));
 };
 
 export const getUserStatus = (userId) => async (dispatch) => {
-    dispatch(profileSuccess(true));
+    dispatch(loadingSuccess(true));
     const response = await ProfileAPI.getStatusUser(userId);
     dispatch(getStatus(response.data));
-    dispatch(profileSuccess(false));
+    dispatch(loadingSuccess(false));
 };
 
 
 export const updateUserStatus = (status) => async (dispatch) => {
+    dispatch(loadingSuccess(true));
     const response = await ProfileAPI.updateStatusUser(status);
     if (response.data.resultCode === 0) {
         dispatch(getStatus(status));
+        dispatch(loadingSuccess(false));
     }
+
 };
 
 
 export const updateProfilePhoto = (file) => async (dispatch) => {
+    dispatch(loadingSuccess(true));
     const response = await ProfileAPI.updateAvatarProfile(file);
     if (response.data.resultCode === 0) {
         dispatch(updatePhoto(response.data.data.photos));
+        dispatch(loadingSuccess(false));
     }
 };
 

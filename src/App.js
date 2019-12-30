@@ -12,8 +12,8 @@ import DialogsContainer from "./containers/DialogsPageContainer/DialogsPageConta
 import UsersContainer from "./containers/UsersContainer/UsersContainer";
 import Login from "./components/Login/Login";
 import Music from "./components/Music/Music";
-import Settings from "./components/Settings/Settings";
 import Search from "./components/Search/Search";
+import SettingsContainer from "./containers/SettingsContainer/SettingsContainer";
 
 class App extends React.Component {
 
@@ -37,7 +37,7 @@ class App extends React.Component {
                         <Route exact path='/login' render={() => <Login/>}/>
                         <Route exact path='/music' render={() => <Music/>}/>
                         <Route exact path='/news' render={() => <div className='text-center w-100'><h1>This will be news!</h1></div>}/>
-                        <Route exact path='/settings' render={() => <Settings/>}/>
+                        <Route exact path='/settings' render={() => <SettingsContainer/>}/>
                         <Route exact path='/search' render={() => <Search/>}/>
                         <Route exact path='/' render={() => <Redirect to='/profile' />}/>
                         <Route path='*' render={() => <div>Error 404</div>}/>

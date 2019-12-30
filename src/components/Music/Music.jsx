@@ -16,7 +16,7 @@ import fourteenth from "../../assets/audio/brati-monahi-chsvv-lyubov-sila.mp3";
 import fifteenth from "../../assets/audio/irina-fedishin-moja-koljada.mp3";
 import sixteenth from "../../assets/audio/kolyadki-na-dvor-r-zdvo.mp3";
 import seventeenth from "../../assets/audio/rina-fedishin-kolyadki-hay-sus-male-ditya-nove-2016.mp3";
-import {Container} from "reactstrap";
+import {Container, Row} from "reactstrap";
 
 const audioArray = [
     {id: 1, url: first, title: 'Засвіти зірко'},
@@ -42,16 +42,16 @@ const Music = () => {
     return (
         <Container>
             <h2 className='text-center mb-3'>Best ukrainian songs</h2>
-            <div className='d-flex flex-wrap justify-content-between'>
+            <Row>
                 {audioArray.map((audio) => (
-                    <div key={audio.id}>
+                    <div key={audio.id} className='col-lg-4 col-md-6 col-12'>
                         <audio className='mt-1' style={{outline: 'none'}} controls>
                             <source src={audio.url}/>
                         </audio>
                         <p className='text-center'>{audio.title}</p>
                     </div>
                 ))}
-            </div>
+            </Row>
         </Container>
     )
 };

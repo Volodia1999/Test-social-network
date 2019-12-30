@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8bc12995-15cc-4ae2-bc3a-5bdd5796f031" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePageWithHooks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfilePage/ProfilePageWithHooks.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search/Search.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Music/Music.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Music/Music.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Settings/Settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings/Settings.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/ProfilePageContainer/ProfilePageContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ProfilePageContainer/ProfilePageContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Auth/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Auth/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/ProfilePage/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ProfilePage/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Users/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Users/actions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +166,8 @@
       <workItem from="1577350788108" duration="753000" />
       <workItem from="1577352370411" duration="14112000" />
       <workItem from="1577392036298" duration="689000" />
-      <workItem from="1577623677030" duration="10016000" />
+      <workItem from="1577623677030" duration="10124000" />
+      <workItem from="1577709936189" duration="8783000" />
     </task>
     <task id="LOCAL-00001" summary="fix code">
       <created>1575726503101</created>
@@ -292,9 +292,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1576754248892" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1577629342012">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1577722101384">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577629342012" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577722101384" />
   </component>
 </project>
